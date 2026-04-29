@@ -40,16 +40,17 @@
 
     <style>
         body {
-            background-color: #E3D5C8;
+            background-color: #F9F5F0;
             color: #2C3531;
             -webkit-font-smoothing: antialiased;
         }
         
         /* Animated Earthy Background */
         .animated-bg {
-            background: linear-gradient(-45deg, #F4ECE4, #DCC5B3, #C8AA92, #E8D8CC);
+            background: linear-gradient(-45deg, #FAF7F2, #F4EFE8, #EDE4DA, #F9F5F0);
             background-size: 400% 400%;
-            animation: gradientMove 20s ease infinite;
+            background-attachment: fixed;
+            animation: gradientMove 12s ease infinite;
         }
         
         @keyframes gradientMove {
@@ -87,137 +88,102 @@
 </head>
 <body class="font-sans antialiased text-brand-text min-h-screen selection:bg-brand-gold selection:text-white pb-12 animated-bg">
 
-    <!-- Main Container - Adjust to 6xl for desktop layout -->
+    <!-- Main Container -->
     <main class="w-full max-w-6xl mx-auto px-6 pt-12 md:pt-20">
         
-        <!-- Grid Layout -->
-        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+        <!-- Grid Layout: Grid para controle total de posicionamento no PC e Mobile -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-x-12 lg:gap-x-20 items-start">
             
-            <!-- Left Column: Texts and Presentation -->
-            <div class="w-full lg:w-3/5">
-                
-                <!-- Header -->
-                <header class="mb-12 fade-in delay-1 text-center lg:text-left">
-                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-8 mb-6">
-                        <!-- Profile Image Placeholder -->
-                        <div class="w-36 h-36 lg:w-44 lg:h-44 shrink-0 rounded-full overflow-hidden border-[4px] border-white shadow-xl bg-brand-gold/20 flex items-center justify-center">
-                            <!-- Imagem local da Dra. Luana -->
+            <!-- 1. Header (Esquerda no PC, Primeiro no Mobile) -->
+            <div class="order-1 lg:row-start-1 lg:col-start-1">
+                <header class="mb-2 fade-in delay-1 text-left">
+                    <div class="flex flex-col items-start gap-8">
+                        <!-- Profile Image -->
+                        <div class="w-40 h-40 lg:w-48 lg:h-48 shrink-0 rounded-full overflow-hidden border-[8px] border-white shadow-2xl bg-brand-gold/20 flex items-center justify-center">
                             <img src="foto-luana.jpg" alt="Dra. Luana Caldas" class="w-full h-full object-cover object-top">
                         </div>
                         
-                        <div class="flex flex-col justify-center pt-2">
+                        <div class="flex flex-col justify-center">
                             <h1 class="font-serif text-4xl md:text-5xl font-medium tracking-wide mb-3 text-brand-text">Dra. Luana Caldas</h1>
                             <p class="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-accentDark mb-4">Cirurgiã-dentista em Salvador, BA</p>
-                            <p class="text-base md:text-lg font-light italic text-gray-600 leading-relaxed max-w-md mx-auto lg:mx-0">
+                            <p class="text-base md:text-lg font-light italic text-gray-600 leading-relaxed max-w-md">
                                 "Odontologia estética com olhar clínico, planejamento individual e naturalidade."
                             </p>
                         </div>
                     </div>
                 </header>
-
-                <!-- Divider Mobile Only -->
-                <div class="flex justify-center lg:hidden mb-10 fade-in delay-2">
-                    <div class="w-12 h-px bg-brand-gold/60"></div>
-                </div>
-
-                <!-- Sobre & Proposta -->
-                <section class="space-y-6 mb-12 fade-in delay-2">
-                    <div class="glass-card rounded-2xl p-7 transition-transform hover:-translate-y-1 duration-300">
-                        <h2 class="font-serif text-2xl mb-4 text-brand-text flex items-center gap-3">
-                            <i class="fa-solid fa-leaf text-brand-gold text-lg"></i>
-                            Sobre
-                        </h2>
-                        <p class="text-[15px] leading-relaxed font-light text-gray-700">
-                            Meu trabalho parte de um princípio simples: saúde vem antes da estética.<br><br>
-                            Cada sorriso é avaliado com critério para que forma, função e harmonia caminhem juntas.
-                        </p>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-7 transition-transform hover:-translate-y-1 duration-300">
-                        <h2 class="font-serif text-2xl mb-4 text-brand-text flex items-center gap-3">
-                            <i class="fa-solid fa-bullseye text-brand-gold text-lg"></i>
-                            Proposta
-                        </h2>
-                        <p class="text-[15px] leading-relaxed font-light text-gray-700">
-                            Mais do que transformar dentes, meu objetivo é construir resultados leves, proporcionais e coerentes com você.<br><br>
-                            Sem excessos, sem fórmulas prontas, com indicação correta e execução cuidadosa.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Áreas Principais -->
-                <section class="mb-14 fade-in delay-3">
-                    <h2 class="font-serif text-3xl mb-8 text-center lg:text-left">Áreas Principais</h2>
-                    
-                    <div class="space-y-5">
-                        <div class="bg-white/80 rounded-2xl p-6 border border-white/60 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accentDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <h3 class="font-serif text-xl mb-2 text-brand-text">Facetas em resina</h3>
-                            <p class="text-[15px] font-light text-gray-600 leading-relaxed">
-                                Naturalidade, proporção e planejamento para valorizar o sorriso com equilíbrio.
-                            </p>
-                        </div>
-
-                        <div class="bg-white/80 rounded-2xl p-6 border border-white/60 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accentDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <h3 class="font-serif text-xl mb-2 text-brand-text">Clareamento dental</h3>
-                            <p class="text-[15px] font-light text-gray-600 leading-relaxed">
-                                Conduta individualizada para realçar o sorriso com segurança e bom senso clínico.
-                            </p>
-                        </div>
-
-                        <div class="bg-white/80 rounded-2xl p-6 border border-white/60 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accentDark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <h3 class="font-serif text-xl mb-2 text-brand-text">Estética funcional</h3>
-                            <p class="text-[15px] font-light text-gray-600 leading-relaxed">
-                                Ajustes pensados para unir beleza, conforto e saúde bucal.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                
             </div>
 
-            <!-- Right Column: Para quem busca & CTA (Sticky on Desktop) -->
-            <div class="w-full lg:w-2/5">
-                <div class="sticky top-12 fade-in delay-4">
+            <!-- 2. Coluna de Ação (Direita no PC, Segundo no Mobile) -->
+            <div class="order-2 lg:row-start-1 lg:row-span-2 lg:col-start-2 lg:sticky lg:top-12 mb-12 lg:mb-0">
+                <div class="fade-in delay-4">
                     
                     <div class="mb-10 lg:mb-12 px-2 text-center lg:text-left">
                         <h2 class="font-serif text-2xl mb-4 text-brand-text">Para quem busca</h2>
-                        <div class="glass-card rounded-2xl p-6">
-                            <p class="text-[15px] font-light text-gray-700 italic leading-relaxed">
-                                "Um atendimento criterioso, personalizado e baseado em ciência, técnica e sensibilidade estética."
-                            </p>
-                        </div>
+                        <p class="text-[16px] font-light text-gray-700 italic leading-relaxed">
+                            "Um atendimento criterioso, personalizado e baseado em ciência, técnica e sensibilidade estética."
+                        </p>
                     </div>
 
-                    <div class="bg-[#2C3531] text-brand-bg rounded-3xl p-8 shadow-xl relative overflow-hidden text-center lg:text-left">
-                        <!-- Background decoration -->
+                    <!-- Bloco 1: Atendimento Geral -->
+                    <div class="bg-[#2C3531] text-brand-bg rounded-3xl p-8 shadow-xl relative overflow-hidden text-center lg:text-left mb-6">
                         <div class="absolute -right-12 -top-12 w-40 h-40 bg-brand-accent/20 rounded-full blur-2xl pointer-events-none"></div>
                         <div class="absolute -left-8 -bottom-8 w-32 h-32 bg-brand-gold/10 rounded-full blur-xl pointer-events-none"></div>
                         
-                        <h2 class="font-serif text-3xl mb-4 relative z-10">Agende sua avaliação</h2>
+                        <h2 class="font-serif text-3xl mb-4 relative z-10 text-white">Agende sua avaliação</h2>
                         <p class="text-[15px] font-light text-white/80 mb-8 relative z-10 lg:pr-4">
                             Se você deseja entender o que faz sentido para o seu sorriso, fale comigo no WhatsApp.
                         </p>
                         
-                        <a href="https://wa.me/5571999999999" target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center justify-center w-full px-6 py-4 bg-brand-bg text-brand-text font-medium text-[15px] rounded-full transition-all hover:scale-105 duration-300 hover:shadow-xl group">
+                        <a href="https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento%20geral." target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center justify-center w-full px-6 py-4 bg-brand-bg text-brand-text font-medium text-[15px] rounded-full transition-all hover:scale-105 duration-300 hover:shadow-xl group">
                             <i class="fab fa-whatsapp text-xl mr-3 text-green-600 group-hover:text-green-500 transition-colors"></i>
-                            Agendar pelo WhatsApp
+                            Agendar Atendimento Geral
                         </a>
                     </div>
-                    
-                    <!-- Footer Desktop Only (on the bottom of right column) -->
-                    <footer class="text-center lg:text-left mt-12 pb-8">
-                        <p class="text-xs text-gray-400 font-light tracking-wide uppercase">
-                            &copy; 2026 Dra. Luana Caldas
-                        </p>
-                    </footer>
 
+                    <!-- Bloco 2: Facetas -->
+                    <div class="glass-card rounded-3xl p-8 shadow-lg relative overflow-hidden text-center lg:text-left">
+                        <h2 class="font-serif text-3xl mb-4 text-brand-text">Avaliação para Facetas</h2>
+                        <p class="text-[15px] font-light text-gray-600 mb-8">
+                            Planejamento individual e naturalidade para transformar o seu sorriso com equilíbrio.
+                        </p>
+                        
+                        <a href="https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20uma%20avaliação%20para%20facetas%20em%20resina." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-6 py-4 bg-[#2C3531] text-brand-bg font-medium text-[15px] rounded-full transition-all hover:scale-105 duration-300 hover:shadow-xl group">
+                            <i class="fab fa-whatsapp text-xl mr-3 text-green-400 group-hover:text-green-300 transition-colors"></i>
+                            Agendar Avaliação
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- 3. Coluna de Conteúdo (Abaixo do Header no PC, Terceiro no Mobile) -->
+            <div class="order-3 lg:row-start-2 lg:col-start-1 mt-0">
+                <section class="fade-in delay-2">
+                    <div class="pb-12 lg:pr-12">
+                        <!-- Traço acima do texto -->
+                        <div class="w-16 h-px bg-brand-gold mb-8"></div>
+                        <p class="text-[18px] md:text-[22px] font-serif leading-relaxed font-light text-brand-text italic">
+                            "Acredito que a saúde vem antes da estética, avaliando cada sorriso com critério para que forma e função caminhem juntas. Meu objetivo é construir resultados leves, naturais e proporcionais — através de facetas em resina, clareamento e estética funcional — com execução cuidadosa e sem fórmulas prontas, valorizando sempre a sua essência."
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Footer Desktop Only -->
+                <footer class="hidden lg:block text-left mt-4 pb-8">
+                    <p class="text-xs text-gray-400 font-light tracking-wide uppercase">
+                        &copy; 2026 Dra. Luana Caldas
+                    </p>
+                </footer>
+            </div>
+
         </div>
+
+        <!-- Footer Mobile Only -->
+        <footer class="lg:hidden text-center mt-12 pb-8">
+            <p class="text-xs text-gray-400 font-light tracking-wide uppercase">
+                &copy; 2026 Dra. Luana Caldas
+            </p>
+        </footer>
 
     </main>
 
